@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+     @font-face {
+    font-family: "Poppins Regular";
+    font-display: swap;
+    src: url(/src/assets/fonts/AnyConv.com__Poppins-Regular.woff2);
+  }
+     @font-face {
+    font-family: "Poppins Medium";
+    font-display: swap;
+    src: url(/src/assets/fonts/AnyConv.com__Poppins-Medium.woff2);
+  }
+     @font-face {
+    font-family: "Inter Regular";
+    font-display: swap;
+    src: url(/src/assets/fonts/Inter_24pt-Regular.woff2);
+  }
+     @font-face {
+    font-family: "Inter Medium";
+    font-display: swap;
+    src: url(/src/assets/fonts/Inter_24pt-Medium.woff2);
+  }
+}
