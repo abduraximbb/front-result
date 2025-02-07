@@ -1,18 +1,27 @@
 import send_icon from "../../assets/icons/Vector.svg"
 import qrCode from "../../assets/images/Qrcode 1.png"
+import playm2 from "../../assets/images/playm2.svg";
+import appstore from "../../assets/images/download-appstore.svg"
 
-import { FaGooglePlay, FaApple } from "react-icons/fa";
+import {
+  RiFacebookLine,
+  RiTwitterLine,
+  RiInstagramLine,
+  RiLinkedinLine,
+} from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1440px] h-[440px] bg-primary text-white font-poppins-medium pt-20 px-[135px]">
-      <div className="container border-2 border-red-800 grid grid-cols-5 gap-[87px]">
+    <div className="max-w-[1440px] bg-primary text-white font-poppins-medium pt-20 px-[135px] max-sm:pl-0">
+      <div className="container grid grid-cols-5 gap-[87px] max-md:grid-cols-3 max-sm:grid-cols-2">
         <div className="flex gap-6 flex-col">
           <h3 className="text-2xl">Exclusive</h3>
           <p className="text-xl">Subscribe</p>
           <p className="text-base">Get 10% off your first order</p>
           <div className="border-[1.5px] rounded-md max-w-[217px] h-12 flex items-center justify-evenly">
-            <p className="text-base text-[#FAFAFA]">Enter your email</p>
+            <p className="text-base text-[#646464] max-[1350px]:text-xs max-[1200px]:text-[10px]">
+              Enter your email
+            </p>
             <img src={send_icon} alt="" />
           </div>
         </div>
@@ -50,19 +59,41 @@ const Footer = () => {
                 <img src={qrCode} alt="" />
               </div>
               <div className="flex flex-col gap-2">
-                <div className="border-[0.6px] color-[#FAFAFA] max-w-[104px] h-[50%] rounded-md flex items-center justify-between">
-                  <FaGooglePlay />
-                  <p>Google Play</p>
-                </div>
-                <div className="border-[0.6px] color-[#FAFAFA] max-w-[104px] h-[50%] rounded-md flex items-center justify-between">
-                  <FaApple />
-                  <p>AppStore</p>
-                </div>
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={playm2} alt="Google Play" />
+                </a>
+                <a
+                  href="https://www.apple.com/app-store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={appstore} alt="App Store" />
+                </a>
               </div>
             </div>
           </div>
-        
+          <div className="grid grid-cols-5 gap-6">
+            <a href="https://www.facebook.com/">
+              <RiFacebookLine />
+            </a>
+            <a href="https://x.com/">
+              <RiTwitterLine />
+            </a>
+            <a href="https://www.instagram.com/">
+              <RiInstagramLine />
+            </a>
+            <a href="https://www.linkedin.com/">
+              <RiLinkedinLine />
+            </a>
+          </div>
         </div>
+      </div>
+      <div className="text-[#3D3D3D] text-base mt-[50px] text-center max-[480px]:text-[10px]">
+        <p>Copyright Rimel 2022. All right reserved</p>
       </div>
     </div>
   );
