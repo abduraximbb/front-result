@@ -6,6 +6,7 @@ import Wishlist from "../pages/wishlist/Wishlist"
 import Login from "../pages/auth/login/Login"
 import Account from "../pages/account/Account"
 import ProductDetail from "../pages/Detail/ProductDetail"
+import NotFound from "../pages/not-found/NotFound"
 
 const Router = () => {
   return (
@@ -43,6 +44,22 @@ const Router = () => {
                 </SuspenseContainer>
               ),
             },
+            {
+              path: "/account",
+              element: (
+                <SuspenseContainer>
+                  <Account />
+                </SuspenseContainer>
+              ),
+            },
+            {
+              path: "*",
+              element: (
+                <SuspenseContainer>
+                  <NotFound />
+                </SuspenseContainer>
+              ),
+            },
           ],
         },
         {
@@ -50,14 +67,6 @@ const Router = () => {
           element: (
             <SuspenseContainer>
               <Login />
-            </SuspenseContainer>
-          ),
-        },
-        {
-          path: "/account",
-          element: (
-            <SuspenseContainer>
-              <Account />
             </SuspenseContainer>
           ),
         },
