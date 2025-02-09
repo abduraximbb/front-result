@@ -7,6 +7,7 @@ import Login from "../pages/auth/login/Login"
 import Account from "../pages/account/Account"
 import ProductDetail from "../pages/Detail/ProductDetail"
 import NotFound from "../pages/not-found/NotFound"
+import SignUp from "../pages/auth/signup/SignUp"
 
 const Router = () => {
   return (
@@ -53,6 +54,22 @@ const Router = () => {
               ),
             },
             {
+              path: "/signin",
+              element: (
+                <SuspenseContainer>
+                  <Login />
+                </SuspenseContainer>
+              ),
+            },
+            {
+              path: "/signup",
+              element: (
+                <SuspenseContainer>
+                  <SignUp />
+                </SuspenseContainer>
+              ),
+            },
+            {
               path: "*",
               element: (
                 <SuspenseContainer>
@@ -61,14 +78,6 @@ const Router = () => {
               ),
             },
           ],
-        },
-        {
-          path: "/login",
-          element: (
-            <SuspenseContainer>
-              <Login />
-            </SuspenseContainer>
-          ),
         },
       ])}
     </>
