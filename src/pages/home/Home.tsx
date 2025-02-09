@@ -5,6 +5,7 @@ import Hero from "./Hero"
 
 const Home = () => {
   const { data, isLoading } = useGetProductsQuery({});
+  console.log(data);
   
   return (
     <>
