@@ -5,13 +5,13 @@ import sign_photo from "../../../assets/images/Side Image.png";
 const SignUp = () => {
   return (
     <div className="container flex mt-10 mb-20 ">
-      <div>
-        <img src={sign_photo} alt="sign_photo.png" />
+      <div className="max-[450px]:hidden">
+        <img src={sign_photo} alt="sign_photo.png" className="w-full h-full" />
       </div>
-      <div className="flex justify-center items-center pl-32">
-        <div className="w-[370px] flex flex-col justify-center items-center font-poppins">
-          <form action="/">
-            <div className="flex flex-col gap-6">
+      <div className="flex justify-center items-center pl-32  max-lg:pl-0 max-xl:pl-20 max-md:pl-4 max-sm:pl-0 max-[450px]:mx-auto">
+        <div className="w-[370px] flex flex-col justify-center items-center font-poppins max-md:w-[300px] ">
+          <form action="/" className="">
+            <div className="flex flex-col gap-6 ">
               <h2 className="text-4xl font-inter font-medium leading-[30px]">
                 Create an account
               </h2>

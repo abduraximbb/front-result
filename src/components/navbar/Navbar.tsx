@@ -31,7 +31,7 @@ const Navbar = () => {
         <NavLink to={"/cart"}>
           <IoCartOutline className="h-6 w-6" />
         </NavLink>
-        <NavLink to={"/login"}>
+        <NavLink to={"/account"}>
           <FiUser className="h-6 w-6" />
         </NavLink>
       </div>

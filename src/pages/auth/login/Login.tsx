@@ -16,7 +16,7 @@ const SignIn = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/auth/login`,
+        `${import.meta.env.VITE_BASE_URL}auth/login`,
         {
           method: "POST",
           headers: {
@@ -26,16 +26,19 @@ const SignIn = () => {
         }
       );
 
-      const data: { token?: string; message?: string } = await response.json();
+      const data: { accessToken?: string; message?: string } =
+        await response.json();
 
       if (!response.ok) {
         throw new Error(data.message || "Login failed");
       }
 
-      console.log("Login successful:", data);
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-        alert("Login successful!");
+      if (data.accessToken) {
+        localStorage.setItem("token", data.accessToken);
+        console.log("Login successful:", data);
+        navigate("/account");
+      } else {
+        console.log("fail");
       }
     } catch (err) {
       if (err instanceof Error) {
@@ -50,14 +53,14 @@ const SignIn = () => {
 
   return (
     <div className="container flex mt-10 mb-20">
-      <div>
-        <img src={sign_photo} alt="sign_photo.png" />
+      <div className="max-[450px]:hidden">
+        <img src={sign_photo} alt="sign_photo.png" className="h-full w-full"/>
       </div>
-      <div className="flex justify-center items-center pl-32">
-        <div className="w-[370px] flex flex-col justify-center items-center font-poppins">
+      <div className="flex justify-center items-center xl:pl-20 2xl:pl-24 max-md:pl-0 max-[450px]:pl-0 max-[450px]:mx-auto">
+        <div className="w-[370px] max-md:w-[300px] flex flex-col justify-center items-center font-poppins">
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
-              <h2 className="text-4xl font-inter font-medium leading-[30px]">
+              <h2 className="text-4xl font-inter font-medium leading-[30px] max-sm:text-2xl">
                 Log in to Exclusive
               </h2>
               <p className="font-poppins font-normal">
@@ -85,13 +88,13 @@ const SignIn = () => {
             {error && <p className="text-red-500">{error}</p>}
             <div className="flex justify-between items-center">
               <button
-                className="bg-[#DB4444] border border-[#DB4444] text-[#FAFAFA] rounded-[4px] py-3 px-8 hover:bg-white hover:text-[#DB4444] duration-150"
+                className="bg-[#DB4444] border border-[#DB4444] text-[#FAFAFA] rounded-[4px] py-3 px-8 hover:bg-white hover:text-[#DB4444] duration-150 max-[450px]:py-2"
                 type="submit"
                 disabled={loading}
               >
                 {loading ? "Loading..." : "Log In"}
               </button>
-              <p className="text-[#DB4444] cursor-pointer hover:text-red-800 duration-150">
+              <p className="text-[#DB4444] cursor-pointer hover:text-red-800 duration-150 max-[450px]:pl-2">
                 Forget Password?
               </p>
             </div>
